@@ -79,4 +79,4 @@ class ResultHandler(Handler):
 
 app = webapp2.WSGIApplication([(r'/', SearchHandler),
 			       (r'/result', ResultHandler)],
-                              debug=True)
+                              debug=False)
