@@ -1,0 +1,66 @@
+/*elaborated from http://woork.blogspot.com/2008/06/clean-and-pure-css-form-design.html & http://bavotasan.com/2011/style-select-box-using-only-css/*/
+
+body {
+background-image:url("/static/pw_maze_white.png");
+font-family: 'Tenor Sans', sans-serif;
+font-size: 14px;
+}
+
+
+h1{
+font-family: 'Lobster', cursive;
+}
+
+.styled-select select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
+.styled-select {
+   width: 240px;
+   height: 34px;
+   overflow: hidden;
+   background: url(/static/down_arrow_select.jpg) no-repeat right #ddd;
+   border: 1px solid #ccc;
+   }
+
+#form {width:500px;
+}
+
+#stylized h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+
+#stylized label{
+display:block;
+font-weight:bold;
+text-align:right;
+width:140px;
+float:left;
+padding:10px;
+}
+#stylized .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:140px;
+}
+
+#button {
+height:50px;width:490px;display:block;margin:0px auto;
+}
+
+
+
+

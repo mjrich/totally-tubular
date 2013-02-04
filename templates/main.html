@@ -1,13 +1,24 @@
-
-
 <!doctype html>
-<title>YouTube Video Listing</title>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>YouTube Video Listing</title>
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
+<link href='/css/mainstyle.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div id="wrapper">
+<h1>Totally Tubular</h1>
+<h2>Which top YouTube videos do you want to check out?</h2>
+<br>
 
-<h2>Which YouTube videos do you want?</h2>
 
-<form method="post">
+<div id="stylized" class="myform">
+<form id="form" name="form" method="post">
 
-Country: 
+
+<label>Country:
+<span class="small">Choose the country</span>
+</label>
+<div class="styled-select">
 <select name="country">
 	<option value="All">All Countries</option>
 	<option value="AR">Argentina</option>
@@ -48,11 +59,15 @@ Country:
 	<option value="TW">Taiwan</option>
 	<option value="AE">United Arab Emirates</option>
 	<option value="US">United States</option>
-</select>
+</select></div>
 
 <br><br>
 
-Video Category: 
+
+<label>Video Category:
+<span class="small">Choose the YouTube video category</span>
+</label>
+<div class="styled-select">
 <select name="category">
   <option value="All">All Categories</option>
   <option value="Film">Film & Animation</option>  
@@ -72,22 +87,29 @@ Video Category:
   <option value="Education">Education</option>  
   <option value="Tech">Science & Technology</option> 
   <option value="Nonprofit">Nonprofits & Activism</option> 
-</select>
+</select></div>
 
 <br><br>
 
-Structured Video Feed: 
+
+<label>Video Feed:
+<span class="small">Choose the <a href="https://developers.google.com/youtube/2.0/reference#Standard_feeds">standard YouTube video feed</a>.</span>
+</label>
+<div class="styled-select">
 <select name="feed">
   <option value="most_discussed">Most Discussed</option>
   <option value="most_popular">Most Popular</option>
   <option value="top_favorites">Top Favorites</option>
   <option value="top_rated">Top Rated</option>  
 
-</select>
+</select></div>
 
 <br><br>
 
-Number of videos (up to 50): 
+<label>Number of videos:
+<span class="small">Choose up to 50 videos.</span>
+</label>
+<div class="styled-select">
 <select name="number">
 	<option value="1">1</option>
 	<option value="2">2</option>
@@ -139,14 +161,18 @@ Number of videos (up to 50):
 	<option value="48">48</option>
 	<option value="49">49</option>
 	<option value="50">50</option>
-</select>
+</select></div>
 
 <br><br><br>
 
-<input type="submit" value="Submit" style="height:50px;width:300px;" />
-</form>
-
+<input id="button" type="submit" value="Submit" />
+</form></div>
 <br><br><br><br>
+<div id="footer">
 Comments, questions, concerns?  Get in touch! <br>
-<a href="https://twitter.com/intent/tweet?screen_name=datahh" class="twitter-mention-button" data-size="large" data-related="datahh">Tweet to @datahh</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a href="https://twitter.com/intent/tweet?screen_name=richmanmax" class="twitter-mention-button" data-size="large" data-related="datahh">Tweet to @richmanmax</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
+
+</div>
+</body>
+</html>

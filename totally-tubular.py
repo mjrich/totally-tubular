@@ -56,7 +56,7 @@ class SearchHandler(Handler):
 		video_list = []
 		for index, entry in enumerate(videos.entry):
 			try:
-				video_list += [{'index':str(index + 1) , 'published':entry.published.text , 'updated':entry.updated.text , 'uploader':entry.media.credit.text , 'title':entry.title.text.decode('utf-8').replace('|',' ') , 'category':entry.media.category[0].text , 'length':entry.media.duration.seconds , 'rating':entry.rating.average , 'comments':splitthousands(entry.comments.feed_link[0].count_hint) , 'numraters':entry.rating.num_raters , 'url':entry.media.player.url , 'vidcode':entry.media.player.url[32:43], 'views':splitthousands(entry.statistics.view_count)}]
+				video_list += [{'index':str(index + 1) , 'published':entry.published.text , 'updated':entry.updated.text , 'uploader':entry.media.credit.text , 'title':entry.title.text.decode('utf-8').replace('|',' ') , 'category':entry.media.category[0].text , 'length':entry.media.duration.seconds , 'rating':(float(entry.rating.average)/5*100) , 'comments':splitthousands(entry.comments.feed_link[0].count_hint) , 'numraters':entry.rating.num_raters , 'url':entry.media.player.url , 'vidcode':entry.media.player.url[32:43], 'views':splitthousands(entry.statistics.view_count)}]
 			except:
 				pass
 
@@ -79,4 +79,4 @@ class ResultHandler(Handler):
 
 app = webapp2.WSGIApplication([(r'/', SearchHandler),
 			       (r'/result', ResultHandler)],
-                              debug=False)
+                              debug=True)
