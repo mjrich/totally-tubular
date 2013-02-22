@@ -31,8 +31,8 @@ class Handler(webapp2.RequestHandler):
 
 class SearchHandler(Handler):
 
-	def render_form(self, countryval="", categoryval="", feedval="", numval=""):
-		self.render('main.html', countryval=countryval, categoryval=categoryval, feedval=feedval, numval=numval)
+	def render_form(self, countryval="", categoryval="", feedval="", numval="", timeval=""):
+		self.render('main.html', countryval=countryval, categoryval=categoryval, feedval=feedval, numval=numval, timeval=timeval)
 	
 	def get(self):
 		self.render_form()
@@ -50,8 +50,9 @@ class SearchHandler(Handler):
 			user_category = "_" + user_category
 		user_feed = self.request.get('feed')
 		user_number = self.request.get('number')
+		user_time = self.request.get('time')
 
-		uri = 'https://gdata.youtube.com/feeds/api/standardfeeds/%s%s%s?&v=2&max-results=%s' % (user_country, user_feed, user_category, user_number)
+		uri = 'https://gdata.youtube.com/feeds/api/standardfeeds/%s%s%s?&time=%s&v=2&max-results=%s' % (user_country, user_feed, user_category, user_time, user_number)
 		videos = yt_service.GetYouTubeVideoFeed(uri)
 		video_list = []
 		for index, entry in enumerate(videos.entry):
@@ -79,4 +80,4 @@ class ResultHandler(Handler):
 
 app = webapp2.WSGIApplication([(r'/', SearchHandler),
 			       (r'/result', ResultHandler)],
-                              debug=False)
+                              debug=True)

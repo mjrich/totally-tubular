@@ -6,8 +6,8 @@
 </head>
 <body>
 <div id="wrapper">
-<h1>Totally Tubular</h1>
-<h2>Which top YouTube videos do you want to check out?</h2>
+<h1 class="header">Totally Tubular</h1>
+<h2 class="sub-header">Which top YouTube videos do you want to check out?</h2>
 <br>
 
 
@@ -98,6 +98,8 @@
 <div class="styled-select">
 <select name="feed">
   <option value="most_discussed">Most Discussed</option>
+  <option value="most_recent">Most Recent</option>
+  <option value="most_responded">Most Responded</option>
   <option value="most_popular">Most Popular</option>
   <option value="top_favorites">Top Favorites</option>
   <option value="top_rated">Top Rated</option>  
@@ -163,13 +165,28 @@
 	<option value="50">50</option>
 </select></div>
 
+<br><br>
+
+
+<label>Time:
+<span class="small">Choose the time period.</span>
+</label>
+<div class="styled-select">
+<select name="time">
+  <option value="today">Today</option>
+  <option value="this_week">This Week</option>
+  <option value="this_month">This Month</option>
+  <option value="all_time">All Time</option>
+
+</select></div>
+
 <br><br><br>
 
 <input id="button" type="submit" value="Submit" />
 </form></div>
 <br><br><br><br>
 <div id="footer">
-Comments, questions, concerns?  Get in touch! <br>
+Comments, questions, concerns?  Get in touch! <br><br>
 <a href="https://twitter.com/intent/tweet?screen_name=richmanmax" class="twitter-mention-button" data-size="large" data-related="datahh">Tweet to @richmanmax</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></div>
 
