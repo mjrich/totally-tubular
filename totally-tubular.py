@@ -70,7 +70,7 @@ class SearchHandler(Handler):
 		j = urlopen(alexa_uri)
 		alexa_results = json.load(j)
 
-		country += '-'
+		country = user_country.replace('/','-') 
 
 		global alexa_results
 		global video_list
@@ -91,4 +91,4 @@ class ResultHandler(Handler):
 
 app = webapp2.WSGIApplication([(r'/', SearchHandler),
 			       (r'/result', ResultHandler)],
-                              debug=True)
+                              debug=False)
