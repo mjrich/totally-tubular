@@ -4,6 +4,8 @@ import gdata.alt.appengine
 import os
 import webapp2
 import jinja2
+import json
+from urllib2 import urlopen
 
 yt_service = gdata.youtube.service.YouTubeService()
 yt_service.ssl = True
@@ -61,23 +63,32 @@ class SearchHandler(Handler):
 			except:
 				pass
 
+		
+		country = user_country[:2]
+
+		alexa_uri = 'https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=alexa-country-ranks&query=select%20*%20from%20%60swdata%60%20where%20country%3D' + '\''+  country + '\''+ '%20limit%205'
+		j = urlopen(alexa_uri)
+		alexa_results = json.load(j)
+
+		country += '-'
+
+		global alexa_results
 		global video_list
+		global uri
+		global country
 
 
 		self.redirect("/result")
 
 class ResultHandler(Handler):
-	#def get(self):
-	#	self.write("List: %s" % (video_list))
 
-	def render_result(self, video_list=""):
-		self.render('result.html', video_list=video_list)
+	def render_result(self, video_list="", uri="", country="", alexa_results=""):
+		self.render('result.html', video_list=video_list, uri=uri, country=country, alexa_results=alexa_results)
 	
 	def get(self):
-		self.render_result(video_list)
+		self.render_result(video_list,uri, country, alexa_results)
 
-	#add CSV output from results page.
 
 app = webapp2.WSGIApplication([(r'/', SearchHandler),
 			       (r'/result', ResultHandler)],
-                              debug=False)
+                              debug=True)
