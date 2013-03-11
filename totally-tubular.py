@@ -6,6 +6,7 @@ import webapp2
 import jinja2
 import json
 from urllib2 import urlopen
+import logging
 
 yt_service = gdata.youtube.service.YouTubeService()
 yt_service.ssl = True
@@ -19,6 +20,8 @@ def splitthousands(s, sep=','):
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape = True)
+
+
 
 class Handler(webapp2.RequestHandler):
 	def write(self, *a, **kw):
@@ -89,6 +92,37 @@ class ResultHandler(Handler):
 		self.render_result(video_list,uri, country, alexa_results)
 
 
+#Custom error handling
+
+class Webapp2HandlerAdapter(webapp2.BaseHandlerAdapter):
+    def __call__(self, request, response, exception):
+        request.route_args = {}
+        request.route_args['exception'] = exception
+        handler = self.handler(request, response)
+        return handler.get()
+
+class Handle500(Handler):
+    def get(self):
+        self.render("500.html",
+            page_title="500",
+            exception=self.request.route_args['exception']
+        )
+
+class Handle404(Handler):
+    def get(self):
+        self.render("404.html",
+            page_title="404",
+            exception=self.request.route_args['exception']
+        )
+
+
+
+
 app = webapp2.WSGIApplication([(r'/', SearchHandler),
 			       (r'/result', ResultHandler)],
-                              debug=False)
+                              debug=True)
+
+
+app.error_handlers[500] = Webapp2HandlerAdapter(Handle500)
+app.error_handlers[404] = Webapp2HandlerAdapter(Handle404)
+
