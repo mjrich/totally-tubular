@@ -1,22 +1,23 @@
 <!doctype html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>YouTube Video Listing</title>
-<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>InterTubular - YouTube Videos by Country</title>
 <link href='http://fonts.googleapis.com/css?family=Tenor+Sans' rel='stylesheet' type='text/css'>
 <link href='/css/mainstyle.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="wrapper">
-<h1 class="header">Totally Tubular</h1>
-<h2 class="sub-header">Which top YouTube videos do you want to check out?</h2>
-<br>
+<h1 class="header">InterTubular</h1>
+<a href="http://www.intermedia.org/category/disruptivemetrics/" target="_blank">More info about this web app</a>
+<h3 class="sub-header">Ever wonder what the world is watching? <br>
+With InterTubular, you can check out the top YouTube videos by country.</h3>
 
+<br>
 
 <div id="stylized" class="myform">
 <form id="form" name="form" method="post">
 
 
 <label>Country:
-<span class="small">Choose the country</span>
+<span class="small">Choose the <a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_video_feeds#Region_specific_feeds" target="_blank">country</a></span>
 </label>
 <div class="styled-select">
 <select name="country">
@@ -65,7 +66,7 @@
 
 
 <label>Video Category:
-<span class="small">Choose the YouTube video category</span>
+<span class="small">Choose the YouTube video <a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_video_feeds#Category_specific_standard_feeds" target="_blank">category</a></span>
 </label>
 <div class="styled-select">
 <select name="category">
@@ -93,14 +94,14 @@
 
 
 <label>Video Feed:
-<span class="small">Choose the <a href="https://developers.google.com/youtube/2.0/reference#Standard_feeds">standard YouTube video feed</a>.</span>
+<span class="small">Choose the <a href="https://developers.google.com/youtube/2.0/reference#Standard_feeds" target="_blank">standard YouTube video feed</a>.</span>
 </label>
 <div class="styled-select">
 <select name="feed">
   <option value="most_discussed">Most Discussed</option>
+  <option value="most_popular" selected="selected">Most Popular</option>
   <option value="most_recent">Most Recent</option>
   <option value="most_responded">Most Responded</option>
-  <option value="most_popular">Most Popular</option>
   <option value="top_favorites">Top Favorites</option>
   <option value="top_rated">Top Rated</option>  
 
@@ -169,7 +170,7 @@
 
 
 <label>Time:
-<span class="small">Choose the time period.</span>
+<span class="small">Choose the <a href="https://developers.google.com/youtube/2.0/developers_guide_protocol_api_query_parameters#timesp" target="_blank">time</a> period.</span>
 </label>
 <div class="styled-select">
 <select name="time">
