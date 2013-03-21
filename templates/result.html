@@ -4,11 +4,16 @@
 <link href='/css/resultstyle.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<h1 class="header">Totally Tubular</h1>
+<h1 class="header">InterTubular</h1>
 <a href="/">Return to search page</a>
-<div class="item">
 <br><br>
-Your Search: <a href="{{uri}}" target="_blank">{{uri}}</a>
+Your Search:<br>
+<div class="item" id="context">
+<a href="{{uri}}" style="font-size:10px;" target="_blank">{{uri}}</a>
+</div>
+<br>
+Country Internet Penetration and Top 5 Websites:
+<div id="context" class="item" style="height: 710px;">
 <div class="wbchart" style="background-color:white; width:300px; line-height:20px; padding:10px;"><div style="background-color:#333; padding:0px 5px; font-weight:bold"><div style="color:#fff; font-size:14px; line-height:20px;"><a href="http://data.worldbank.org/indicator/IT.NET.USER.P2/countries/{{country}}1W?display=graph" style="color:#fff;text-decoration:none;" class="active" target="_blank">Internet users (per 100 people)</a></div></div><script type="text/javascript">widgetContext = { "url": "http://data.worldbank.org/widgets/indicator/0/web_widgets_3/IT.NET.USER.P2/countries/{{country}}1W", "width": 300, "height": 225, "widgetid": "web_widget_iframe_e7ede299e4ab0df45405fd97109c8454" };</script><div id="web_widget_iframe_e7ede299e4ab0df45405fd97109c8454"></div><script src="http://data.worldbank.org/profiles/datafinder/modules/contrib/web_widgets/iframe/web_widgets_iframe.js"></script><div style="font-size: 12px; color:#000">Data from <a href="http://data.worldbank.org/indicator/IT.NET.USER.P2/countries/{{country}}1W?display=graph" style="color:#CCC;" target="_blank">World Bank</a></div></div>
 <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
 

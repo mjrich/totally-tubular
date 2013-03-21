@@ -3,13 +3,18 @@ background-image:url("/static/pw_maze_white.png");
 font-family: 'Tenor Sans', sans-serif;
 margin:40px;
 }
-.video-container {
-    position: relative;
-    padding-bottom: 50%;
-    padding-top: 30px; height: 0; overflow: hidden;
+
+#context {
+border: 1.5px dashed #444;
+margin: 10px;
+padding: 10px;
 }
 
-.item { width:500px; clear:both;}
+
+
+.item { 
+width:500px; 
+clear:both;}
 
 
 a{
@@ -24,7 +29,11 @@ h1.header{
   font-size:32px;
 }
 
-
+.video-container {
+    position: relative;
+    padding-bottom: 50%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
 
 .video-container iframe,
 .video-container object,
