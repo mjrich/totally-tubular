@@ -1,7 +1,7 @@
 body {
 background-image:url("/static/pw_maze_white.png");
 font-family: 'Tenor Sans', sans-serif;
-margin:80px;
+margin:40px;
 }
 .video-container {
     position: relative;
@@ -9,7 +9,7 @@ margin:80px;
     padding-top: 30px; height: 0; overflow: hidden;
 }
 
-.item { width:600px; clear:both;}
+.item { width:550px; clear:both;}
 
 
 a{
